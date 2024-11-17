@@ -1,14 +1,64 @@
-import React from 'react'
+import { useState, useEffect } from 'react';
 
-function Navbar() {
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="flex sticky top-0 justify-around p-4 bg-gray-100 font-serif">
-      <a href="#home" className="text-black no-underline hover:text-blue-500">Home</a>
-      <a href="#stories" className="text-black no-underline hover:text-blue-500">Stories</a>
-      <a href="#about" className="text-black no-underline hover:text-blue-500">About</a>
-      <a href="#resources" className="text-black no-underline hover:text-blue-500">Resources</a>
-    </div>
-  )
-}
+    <nav className={`
+      sticky top-0 
+      w-full 
+      z-100
+      px-8 
+      py-6 
+      transition-all 
+      duration-300 
+      ease-in-out
+      ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-black'}
+    `}>
+      <div className="max-w-7xl mx-auto flex justify-end items-center space-x-12">
+        {['Stories', 'About', 'Resources'].map((item) => (
+          <a
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            className="
+              font-serif 
+              italic 
+              text-white 
+              text-lg
+              hover:text-neutral-300
+              transition-colors 
+              duration-200
+              no-underline
+              relative
+              after:content-['']
+              after:absolute
+              after:w-0
+              after:h-0.5
+              after:bg-white
+              after:left-0
+              after:-bottom-1
+              after:transition-all
+              after:duration-300
+              hover:after:w-full
+            "
+          >
+            {item}
+          </a>
+        ))}
+      </div>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;

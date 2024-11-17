@@ -1,10 +1,36 @@
-import React from 'react'
-import { Map, useMap } from '@vis.gl/react-google-maps';
+import React, { useEffect, useState } from 'react';
+import { Map, useMap, Marker } from '@vis.gl/react-google-maps';
+import { fetchStories } from '../../utils/firebaseUtils';
+
+// Define the type for a story
+interface Story {
+    location: {
+        latitude: number;
+        longitude: number;
+    };
+    name: string;
+    story: string;
+    img_url: string;
+    age: number;
+    goals: string[];
+    profession: string;
+    homeless_since?: string;
+    // Add other properties ig
+}
 
 function VancMap() {
     const map = useMap();
+    const [stories, setStories] = useState<Story[]>([]);
 
-    React.useEffect(() => {
+    useEffect(() => {
+        async function loadStories() {
+            const storiesData = await fetchStories();
+            setStories(storiesData as Story[]);
+        }
+        loadStories();
+    }, []);
+
+    useEffect(() => {
         if (map) {
             map.setOptions({
                 styles: [
@@ -104,7 +130,14 @@ function VancMap() {
         <Map
             defaultZoom={17}
             defaultCenter={{ lat: 49.281282350356186, lng: -123.10014107629969 }}
-        />
+        >
+            {stories.map((story, index) => (
+                <Marker
+                    key={index}
+                    position={{ lat: story.location.latitude, lng: story.location.longitude }}
+                />
+            ))}
+        </Map>
     </div>;
 }
 export default VancMap;
