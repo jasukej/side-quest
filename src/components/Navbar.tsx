@@ -14,6 +14,16 @@ const Navbar = () => {
     };
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <nav className={`
       sticky top-0 
@@ -28,9 +38,9 @@ const Navbar = () => {
     `}>
       <div className="max-w-7xl mx-auto flex justify-end items-center space-x-12">
         {['Stories', 'About', 'Resources'].map((item) => (
-          <a
+          <button
             key={item}
-            href={`#${item.toLowerCase()}`}
+            onClick={() => scrollToSection(item.toLowerCase())}
             className="
               font-serif 
               italic 
@@ -51,10 +61,14 @@ const Navbar = () => {
               after:transition-all
               after:duration-300
               hover:after:w-full
+              bg-transparent
+              border-none
+              cursor-pointer
+              p-0
             "
           >
             {item}
-          </a>
+          </button>
         ))}
       </div>
     </nav>
