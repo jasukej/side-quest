@@ -1,12 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAeBYYU7vbGn676xrgO033EtYlV-XSEf-Q",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "side-quest-1b06d.firebaseapp.com",
   projectId: "side-quest-1b06d",
   storageBucket: "side-quest-1b06d.firebasestorage.app",
