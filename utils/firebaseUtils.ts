@@ -7,3 +7,10 @@ export async function fetchStories() {
   const storiesList = storiesSnapshot.docs.map(doc => doc.data());
   return storiesList;
 } 
+
+export async function fetchPlaces() {
+    const placesCollection = collection(db, "places");
+    const placesSnapshot = await getDocs(placesCollection);
+    const placesList = placesSnapshot.docs.map(doc => doc.data());
+    return placesList;
+}
