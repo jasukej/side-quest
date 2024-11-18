@@ -39,7 +39,7 @@ function Resources() {
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
         backgroundRepeat: 'no-repeat',
-        filter: 'grayscale(100%)'
+        // filter: 'grayscale(100%)'
       }}
     >
       {/* Dark overlay */}
@@ -74,7 +74,7 @@ function Resources() {
                     href={charity.donateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-600 text-white px-4 py-2 rounded-md text-center hover:bg-blue-700 transition-colors duration-300"
+                    className="bg-black/50 backdrop-blur-sm border border-white text-white px-4 py-2 rounded-md text-center hover:bg-blue-600 transition-colors duration-300"
                   >
                     Donate Now
                   </a>

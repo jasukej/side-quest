@@ -36,7 +36,9 @@ const Navbar = () => {
       ease-in-out
       ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-black'}
     `}>
-      <div className="max-w-7xl mx-auto flex justify-end items-center space-x-12">
+        <div className="flex w-full justify-between">
+        <img src='/assets/logo/icon.png' width="60" height="60" className="aspect-square w-[2rem]ssr invert-1"/>
+      <div className="max-w-7xl mr-[2rem] flex justify-end items-center space-x-12">
         {['Docu', 'Stories', 'About', 'Resources'].map((item) => (
           <button
             key={item}
@@ -70,6 +72,7 @@ const Navbar = () => {
             {item}
           </button>
         ))}
+      </div>
       </div>
     </nav>
   );
