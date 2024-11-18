@@ -85,7 +85,30 @@ function Resources() {
           ))}
         </div>
         {/* TODO */}
-        <div className="text-white">More resources</div>
+        <div className="text-neutral-200 text-center mt-[4rem] font-light text-2xl">
+          Click on the <a 
+            href="#stories" 
+            className="font-serif italic hover:underline transition-all duration-300 cursor-pointer group relative"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector('#stories')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            map
+            <span className="absolute -top-5 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="28" 
+                height="28" 
+                fill="currentColor" 
+                viewBox="0 0 256 256"
+                className="animate-bounce"
+              >
+                <path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"></path>
+              </svg>
+            </span>
+          </a> to learn more about what others are doing to help, and how you can get involved.
+        </div>
       </div>
     </div>
   )

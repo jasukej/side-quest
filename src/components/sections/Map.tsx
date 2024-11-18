@@ -222,7 +222,7 @@ function VancMap() {
             <div className="mt-[2rem]">
               <h3 className="text-white text-xl font-serif mb-[1rem]">{story.name} hopes for</h3>
               <div className="flex flex-col divide-y divide-neutral-800">
-                {story.goals.map((goal, index) => (
+                {story.goals && story.goals.map((goal, index) => (
                   <div
                     key={index}
                     className="px-[0.5rem] text-neutral-200 flex flex-row gap-[1rem]"
@@ -260,6 +260,7 @@ function VancMap() {
                   {place.description}
                 </SheetDescription>
               </SheetHeader>
+              {place.contact_field && place.contact_field.length > 0 && (
               <div className="mt-[2rem]">
                 <h3 className="text-white text-xl font-serif mb-[1rem]">You can contact {place.name} at</h3>
                 <div className="flex flex-col divide-y divide-neutral-800">
@@ -273,7 +274,8 @@ function VancMap() {
                     </div>
                   ))}
                 </div>
-              </div>
+                </div>
+              )}
             </SheetContent>
           </Sheet>
         ))}
