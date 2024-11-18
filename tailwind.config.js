@@ -57,7 +57,13 @@ export default {
   				'5': 'hsl(var(--chart-5))'
   			}
   		}
-  	}
+  	},
+    keyframes: {
+      slideUp: {
+        '0%': { transform: 'translateY(40px)', opacity: '0' },
+        '100%': { transform: 'translateY(0)', opacity: '1' },
+      },
+    },
   },
   plugins: [require("tailwindcss-animate")],
 }

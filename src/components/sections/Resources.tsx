@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 
 // Placeholder data - in a real app, this would likely come from an API or database

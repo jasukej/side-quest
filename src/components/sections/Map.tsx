@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Map, useMap, Marker } from "@vis.gl/react-google-maps";
 import { fetchPlaces, fetchStories } from "../../../utils/firebaseUtils";
 import {
