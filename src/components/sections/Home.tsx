@@ -11,7 +11,9 @@ function Home() {
         </p>
       </div>
 
-      <div className="w-full max-w-4xl mb-[8rem] aspect-video bg-neutral-800 rounded-lg overflow-hidden relative group opacity-0 translate-y-10 animate-[slideUp_0.8s_ease-out_0.3s_forwards]">
+      <div 
+        id="docu"
+        className="w-full max-w-4xl mb-[8rem] aspect-video bg-neutral-800 rounded-lg overflow-hidden relative group opacity-0 translate-y-10 animate-[slideUp_0.8s_ease-out_0.3s_forwards]">
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ot2ILDZ1uNs?si=rX0lyFq26oo6GV_n" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
       </div>
     </div>

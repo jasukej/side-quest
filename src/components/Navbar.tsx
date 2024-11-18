@@ -28,7 +28,7 @@ const Navbar = () => {
     <nav className={`
       sticky top-0 
       w-full 
-      z-100
+      z-50
       px-8 
       py-6 
       transition-all 
@@ -37,7 +37,7 @@ const Navbar = () => {
       ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-black'}
     `}>
       <div className="max-w-7xl mx-auto flex justify-end items-center space-x-12">
-        {['Stories', 'About', 'Resources'].map((item) => (
+        {['Docu', 'Stories', 'About', 'Resources'].map((item) => (
           <button
             key={item}
             onClick={() => scrollToSection(item.toLowerCase())}
