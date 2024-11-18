@@ -84,6 +84,8 @@ function Resources() {
             </motion.div>
           ))}
         </div>
+        {/* TODO */}
+        <div className="text-white">More resources</div>
       </div>
     </div>
   )
